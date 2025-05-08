@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;700&family=Cormorant+Garamond:wght@400;600&family=Tangerine:wght@700&family=Montserrat:wght@300;400;500&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -424,6 +426,157 @@
             50% { transform: translateX(5px); }
         }
         
+        /* CMRACO About Section */
+        .about-section {
+            width: 100%;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            text-align: center;
+            position: relative;
+            border-top: 1px solid #ddd;
+        }
+        
+        .about-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .about-title:after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, gold, transparent);
+        }
+        
+        .about-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+            max-width: 90%;
+            margin: 0 auto 25px;
+        }
+        
+        .service-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .service-item {
+            background-color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            color: #555;
+            transition: all 0.3s ease;
+        }
+        
+        .service-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            gap: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-2px);
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            color: gold;
+            font-size: 1.2rem;
+        }
+        
+        .contact-text {
+            font-size: 0.95rem;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .contact-text a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-text a:hover {
+            color: gold;
+        }
+        
+        /* Social Media Icons */
+        .social-links {
+            display: flex;
+            gap: 25px;
+            margin-top: 25px;
+            justify-content: center;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            color: #555;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link i {
+            font-size: 1.3rem;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px);
+            color: gold;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+        
+        .social-link.instagram:hover {
+            color: #C13584;
+        }
+        
+        .social-link.whatsapp:hover {
+            color: #25D366;
+        }
+        
         /* Ornamental divider */
         .divider {
             display: flex;
@@ -524,7 +677,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        .header-section, .message-section, .gallery-section, .album-section, .footer {
+        .header-section, .message-section, .gallery-section, .album-section, .about-section, .footer {
             animation: fadeIn 1s ease forwards;
         }
         
@@ -536,8 +689,12 @@
             animation-delay: 0.4s;
         }
         
-        .footer {
+        .about-section {
             animation-delay: 0.6s;
+        }
+        
+        .footer {
+            animation-delay: 0.8s;
         }
         
         /* RESPONSIVE STYLES */
@@ -555,7 +712,7 @@
                 padding: 30px 15px 20px;
             }
             
-            .message-section {
+            .message-section, .about-section {
                 padding: 25px 15px;
             }
             
@@ -576,7 +733,7 @@
                 font-size: 1.8rem;
             }
             
-            .gallery-title, .album-title {
+            .gallery-title, .album-title, .about-title {
                 font-size: 1.5rem;
             }
             
@@ -589,12 +746,39 @@
                 min-width: 220px;
             }
             
+            .about-description {
+                font-size: 0.95rem;
+            }
+            
+            .service-item {
+                font-size: 0.85rem;
+            }
+            
             .footer {
                 padding: 20px 15px;
             }
             
             .logo {
                 width: 60px;
+            }
+            
+            .contact-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .contact-text {
+                font-size: 0.9rem;
+            }
+            
+            .social-link {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .social-link i {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -678,21 +862,21 @@
             <div class="album-container">
                 <div class="album-scroll" id="albumScroll">
                     <div class="album-item">
-                        <img src="MR5_8435.jpg" alt="Traditional Wedding" class="album-image">
+                        <img src="MR5_8125-Edit.jpg" alt="Traditional Wedding" class="album-image">
                         <div class="album-overlay">
                             <div class="album-date">Wedding Day</div>
                             <div class="album-name">Traditional Ceremony</div>
                         </div>
                     </div>
                     <div class="album-item">
-                        <img src="MR5_8081.jpg" alt="Outdoor Session" class="album-image">
+                        <img src="MR5_8651.jpg" alt="Outdoor Session" class="album-image">
                         <div class="album-overlay">
                             <div class="album-date">Pre-Wedding</div>
                             <div class="album-name">Outdoor Session</div>
                         </div>
                     </div>
                     <div class="album-item">
-                        <img src="MR5_8651.jpg" alt="Reception" class="album-image">
+                        <img src="MR5_8360.jpg" alt="Reception" class="album-image">
                         <div class="album-overlay">
                             <div class="album-date">Wedding Day</div>
                             <div class="album-name">Reception Night</div>
@@ -713,6 +897,62 @@
                         <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
                 </div>
+            </div>
+        </div>
+        
+        <!-- About CMRACO section -->
+        <div class="about-section">
+            <h3 class="about-title">About CMRACO</h3>
+            
+            <p class="about-description">
+                CMRACO specializes in capturing life's precious moments with artistic excellence. Our team of passionate photographers creates timeless memories through stunning visuals that tell your unique story.
+            </p>
+            
+            <div class="service-list">
+                <div class="service-item">Wedding Photography</div>
+                <div class="service-item">Pre-Wedding Shoots</div>
+                <div class="service-item">Portrait Sessions</div>
+                <div class="service-item">Event Coverage</div>
+                <div class="service-item">Photo Albums</div>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                        </div>
+                    <div class="contact-text">
+                        <a href="tel:+918639516953">+91 8639516953</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <a href="tel:+916309562806">+91 6309562806</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <a href="mailto:RAKESHAVULA896@GMAIL.COM">RAKESHAVULA896@GMAIL.COM</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <!-- Updated social links with only Instagram and WhatsApp as requested -->
+                <a href="https://www.instagram.com/marvel_studios.rdj?igsh=MWlkbWdsbm9pMmJwcw==" target="_blank" class="social-link instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/918639516953" target="_blank" class="social-link whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
             </div>
         </div>
         
@@ -855,6 +1095,19 @@
                 const walk = (x - startX) * 2; // Scroll speed
                 albumScroll.scrollLeft = scrollLeft - walk;
             });
+            
+            // Touch support for album scrolling on mobile
+            albumScroll.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].pageX - albumScroll.offsetLeft;
+                scrollLeft = albumScroll.scrollLeft;
+            });
+            
+            albumScroll.addEventListener('touchmove', (e) => {
+                if (e.cancelable) e.preventDefault();
+                const x = e.touches[0].pageX - albumScroll.offsetLeft;
+                const walk = (x - startX) * 2;
+                albumScroll.scrollLeft = scrollLeft - walk;
+            }, { passive: false });
         });
     </script>
 </body>
